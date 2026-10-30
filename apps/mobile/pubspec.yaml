@@ -16,7 +16,6 @@ dependencies:
   geolocator: ^13.0.1
   shared_preferences: ^2.3.2
   url_launcher: ^6.3.0
-  vibration: ^2.0.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0

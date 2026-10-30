@@ -1,7 +1,7 @@
 /// screens/cancel_pin_sheet.dart — الإلغاء: ضغط مطوّل + PIN (13.2).
+import 'package:flutter/services.dart';
 /// PIN الإلغاء يُلغي فعلًا؛ PIN الإكراه يظهر نفس الواجهة لكن البلاغ يستمر صامتًا (D-005: التحقق على الخادم).
 import 'package:flutter/material.dart';
-import 'package:vibration/vibration.dart';
 import '../theme/fazaa_theme.dart';
 import '../services/api_client.dart';
 
@@ -24,7 +24,7 @@ class _CancelPinDialogState extends State<_CancelPinDialog> {
 
   Future<void> _submit() async {
     setState(() { _checking = true; _error = null; });
-    Vibration.vibrate(duration: 60); // 10 ثواني ضغط مطوّل تحقق من شاشة البلاغ قبل هذه — 6.1
+    HapticFeedback.vibrate(); // 10 ثواني ضغط مطوّل تحقق من شاشة البلاغ قبل هذه — 6.1
     try {
       final r = await ApiClient.instance.post('/incidents/${widget.incidentId}/cancel',
         body: {'pin': _pin.text.trim()});
