@@ -76,6 +76,17 @@ class _LoginScreenState extends State<LoginScreen> {
         child: ListView(padding: const EdgeInsets.all(18), children: [
           TextField(controller: _phone, decoration: const InputDecoration(labelText: 'التليفون (بصيغة +20…)')),
           if (_step == 0) Padding(
+          if (const bool.fromEnvironment('FAZAA_DEMO', defaultValue: false)) ...[
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: OutlinedButton.icon(
+                onPressed: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const HomeScreen())),
+                icon: const Icon(Icons.visibility_outlined),
+                label: const Text('تصفح الواجهات التجريبية'),
+              ),
+            ),
+          ],
+          if (_step == 0) Padding(
             padding: const EdgeInsets.only(top: 12),
             child: FilledButton(onPressed: _busy ? null : _requestOtp, child: const Text('أرسل الكود')),
           ),
