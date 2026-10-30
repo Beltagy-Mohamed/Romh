@@ -26,10 +26,6 @@ subprojects {
             compileSdk = 36
         }
     }
-
-    afterEvaluate {
-        extensions.findByType<LibraryExtension>()?.compileSdk = 36
-    }
 }
 
 tasks.register<Delete>("clean") {
