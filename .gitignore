@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+*.local
+coverage/
+.dart_tool/
+.packages
+build/
+.flutter-plugins*
+*.iml
+.idea/
+.vscode/
+apps/api/dev-token.txt
+apps/api/dev-incident-id
+apps/api/dev-incident-id.txt
+apps/api/dev-server.log

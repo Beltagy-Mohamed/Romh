@@ -1,0 +1,14 @@
+# لنجنب التزكية مُصاغة التحذيرات
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    use_super_parameters: ignore
+  exclude:
+    - build/**
+    - android/**
+    - web/**
+
+linter:
+  rules:
+    prefer_const_constructor: true
