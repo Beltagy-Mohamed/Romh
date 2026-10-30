@@ -9,17 +9,17 @@ on:
       - '.github/workflows/android-apk.yml'
 
 permissions:
+  contents: read
 
 concurrency:
   group: android-apk-${{ github.ref }}
   cancel-in-progress: true
-  contents: read
 
 jobs:
   build-apk:
-    timeout-minutes: 15
     name: Build Android APK
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     defaults:
       run:
         working-directory: apps/mobile
