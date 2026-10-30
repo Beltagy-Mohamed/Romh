@@ -1,4 +1,5 @@
 /// screens/cancel_pin_sheet.dart — الإلغاء: ضغط مطوّل + PIN (13.2).
+import 'package:flutter/services.dart';
 /// PIN الإلغاء يُلغي فعلًا؛ PIN الإكراه يظهر نفس الواجهة لكن البلاغ يستمر صامتًا (D-005: التحقق على الخادم).
 import 'package:flutter/material.dart';
 import '../theme/fazaa_theme.dart';
